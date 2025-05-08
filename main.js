@@ -1,5 +1,4 @@
 async function getData() {
-  const url = "https://kal3ogas3w54lyk34kedabeqyq0cjjyz.lambda-url.us-east-1.on.aws/api/v1/articles";
   const container = document.querySelector(".container");
 
   const loading = document.createElement("div");
@@ -8,7 +7,7 @@ async function getData() {
   container.appendChild(loading);
 
   try {
-    const response = await fetch(url);
+    const response = await fetch(API_URL);
     if (!response.ok) throw new Error("Fetch failed");
 
     const data = await response.json();
